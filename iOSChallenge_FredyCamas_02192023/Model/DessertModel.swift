@@ -9,7 +9,7 @@ import Foundation
 
 struct DessertModel {
 
-    struct Card: Decodable,Identifiable {
+    struct Card: Decodable,Identifiable,Equatable {
         var id:String
         var imageURL: String
         var name: String

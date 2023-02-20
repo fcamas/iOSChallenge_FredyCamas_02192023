@@ -21,20 +21,19 @@ struct ExpandedView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .offset(y: -geometry.frame(in: .global).minY)
-                            .frame(width: UIScreen.main.bounds.width, height:  geometry.frame(in: .global).minY + 300)
-                            .shadow(radius: 10)
+                            .frame(width: UIScreen.main.bounds.width, height: max(0, min(CGFloat.infinity, geometry.frame(in: .global).minY + ExpandedViewSizes().minY)))
+                            .shadow(radius: ExpandedViewSizes().shadowRadius)
                     } placeholder: {
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: ExpandedViewSizes().cornerRadius)
                             .offset(y: -geometry.frame(in: .global).minY)
-                            .frame(width: UIScreen.main.bounds.width, height:  geometry.frame(in: .global).minY + 300)
+                            .frame(width: UIScreen.main.bounds.width, height: max(0, min(CGFloat.infinity, geometry.frame(in: .global).minY + ExpandedViewSizes().minY)))
                         
-                            .shadow(radius: 10)
+                            .shadow(radius: ExpandedViewSizes().shadowRadius)
                             .foregroundColor(.gray)
                     }
                    
-                    
                 }
-                .frame(height: 280)
+                .frame(height: ExpandedViewSizes().headerFrame)
                 
                 VStack(alignment: .leading,spacing: 15){
                     
@@ -48,7 +47,7 @@ struct ExpandedView: View {
                         
                     
                     Text(meal.detailcard.first?.instructions ?? "")
-                        .padding(.top, 10)
+                        .padding(.all)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     
@@ -62,16 +61,14 @@ struct ExpandedView: View {
                         Spacer()
                         Text(card.measures)
                     }
-                    }
-                  
-                       
-                
+                    }.padding(.leading)
+                        .padding(.trailing)
+
                 }
-                .padding(.top, 25)
-                .padding(.horizontal)
                 .background(Color.white)
                 .cornerRadius(20)
-                .offset(y: -35)
+
+                
             })
             
             

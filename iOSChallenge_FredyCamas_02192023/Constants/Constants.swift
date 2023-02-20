@@ -18,3 +18,22 @@ struct DessertCardSizes{
     var shadow:CGFloat = 10
     var leading: CGFloat = 20
 }
+
+struct MainViewSizes{
+    
+    var searchDelay = 0.5
+    
+    var rectangleStrokeLineWidth:CGFloat = 1
+    var rectangleFrame:CGFloat = 50
+    var rectangleConerRadius:CGFloat = 20
+    
+    var cardFrame:CGFloat = 300
+}
+
+struct ExpandedViewSizes{
+    
+    var minY:CGFloat = 300
+    var shadowRadius:CGFloat = 10
+    var cornerRadius:CGFloat = 10
+    var headerFrame:CGFloat = 250
+}

@@ -11,22 +11,22 @@ struct ContentView: View {
     @ObservedObject var dessertViewModel = DessertViewModel()
     @State var search:String = ""
     
-    let debounceInterval = 0.5  // debounce interval in seconds
+    let autosearchDelay = MainViewSizes().searchDelay
     
     var body: some View {
         NavigationView {
             VStack {
                 Text("Dessert")
                 ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .strokeBorder(lineWidth: 1)
-                        .frame(height: 50)
+                    RoundedRectangle(cornerRadius: MainViewSizes().rectangleConerRadius)
+                        .strokeBorder(lineWidth: MainViewSizes().rectangleStrokeLineWidth)
+                        .frame(height: MainViewSizes().rectangleFrame)
                         .foregroundColor(.gray)
                     
                     HStack {
                         TextField("Search", text: $search)
                             .onChange(of: search) { _ in
-                                debounce(interval: debounceInterval) {
+                                autoSearch(interval: autosearchDelay) {
                                     dessertViewModel.searchCards(cardText: search)
                                 }
                             }
@@ -49,7 +49,7 @@ struct ContentView: View {
                             NavigationLink(destination: ExpandedView(cardID: card.id)) {
                                 DessertCardView(dessertCard: card)
                             }
-                            .frame(height: 300)
+                            .frame(height: MainViewSizes().cardFrame)
                         }
                     }
                 }
@@ -59,7 +59,7 @@ struct ContentView: View {
     
   
     
-    func debounce(interval: TimeInterval, action: @escaping () -> Void) {
+    func autoSearch(interval: TimeInterval, action: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + interval, execute: action)
     }
 }

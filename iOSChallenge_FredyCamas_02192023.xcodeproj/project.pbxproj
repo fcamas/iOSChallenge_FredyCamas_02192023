@@ -21,6 +21,7 @@
 		11A6696D29A31B99000EF407 /* DessertNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6696C29A31B99000EF407 /* DessertNetworkModel.swift */; };
 		11A6697229A3211C000EF407 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6697129A3211C000EF407 /* DessertViewModel.swift */; };
 		11AE978529A333320012C0A5 /* ExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE978429A333320012C0A5 /* ExpandedView.swift */; };
+		11AE978729A3537D0012C0A5 /* DessertViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE978629A3537D0012C0A5 /* DessertViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		11A6696C29A31B99000EF407 /* DessertNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertNetworkModel.swift; sourceTree = "<group>"; };
 		11A6697129A3211C000EF407 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
 		11AE978429A333320012C0A5 /* ExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedView.swift; sourceTree = "<group>"; };
+		11AE978629A3537D0012C0A5 /* DessertViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				11A6694329A2D136000EF407 /* iOSChallenge_FredyCamas_02192023Tests.swift */,
+				11AE978629A3537D0012C0A5 /* DessertViewModelTests.swift */,
 			);
 			path = iOSChallenge_FredyCamas_02192023Tests;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A6694429A2D136000EF407 /* iOSChallenge_FredyCamas_02192023Tests.swift in Sources */,
+				11AE978729A3537D0012C0A5 /* DessertViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

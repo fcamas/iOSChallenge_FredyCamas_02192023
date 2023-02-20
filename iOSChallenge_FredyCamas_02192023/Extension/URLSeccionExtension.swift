@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// extension used to fetch data using generic data type
 extension URLSession {
   func fetchData<T: Decodable>(for url: URL, completion: @escaping (Result<T, Error>) -> Void) {
     self.dataTask(with: url) { (data, response, error) in

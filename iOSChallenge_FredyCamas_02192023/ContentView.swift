@@ -59,6 +59,8 @@ struct ContentView: View {
     
   
     
+    /// This  function schedules the execution of  an  action over a time interval
+    /// used to autosearch while typing on the textfield  
     func autoSearch(interval: TimeInterval, action: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + interval, execute: action)
     }

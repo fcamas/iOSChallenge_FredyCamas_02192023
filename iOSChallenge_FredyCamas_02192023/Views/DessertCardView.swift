@@ -12,7 +12,7 @@ struct DessertCardView: View {
     var dessertCard: DessertModel.Card
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .center){
             
             AsyncImage(url: URL(string: dessertCard.imageURL), content: { image in
                 image
@@ -32,7 +32,7 @@ struct DessertCardView: View {
             Text(dessertCard.name)
                 .bold()
                 .font(.system(size: 24))
-                .padding(.leading, DessertCardSizes().leading)
+                .foregroundColor(.red)
             
         }.padding(.horizontal)
     }

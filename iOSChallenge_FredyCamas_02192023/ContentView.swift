@@ -8,18 +8,65 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var dessertViewModel = DessertViewModel()
+    @State var search:String = ""
+    
+    let debounceInterval = 0.5  // debounce interval in seconds
+    
     var body: some View {
-        VStack {
-            ScrollView(.vertical, showsIndicators: false) {
+        NavigationView {
+            VStack {
+                Text("Dessert")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .strokeBorder(lineWidth: 1)
+                        .frame(height: 50)
+                        .foregroundColor(.gray)
+                    
+                    HStack {
+                        TextField("Search", text: $search)
+                            .onChange(of: search) { _ in
+                                debounce(interval: debounceInterval) {
+                                    dessertViewModel.searchCards(cardText: search)
+                                }
+                            }
+                        
+                        Image(systemName: "magnifyingglass")
+                            .onTapGesture {
+                                dessertViewModel.searchCards(cardText: search)
+                                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                                            
+                            }.keyboardType(.decimalPad)
+                            .padding()
+                    }
+                    .padding()
+                }
+                .padding(.horizontal)
                 
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack {
+                        ForEach(dessertViewModel.cards) { card in
+                            NavigationLink(destination: ExpandedView(cardID: card.id)) {
+                                DessertCardView(dessertCard: card)
+                            }
+                            .frame(height: 300)
+                        }
+                    }
+                }
             }
-            
         }
+    }
+    
+  
+    
+    func debounce(interval: TimeInterval, action: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + interval, execute: action)
     }
 }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
+}

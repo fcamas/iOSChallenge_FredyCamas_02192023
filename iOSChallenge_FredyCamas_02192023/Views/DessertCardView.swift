@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct DessertCardView: View {
+    
+    var dessertCard: DessertModel.Card
+    
     var body: some View {
         VStack(alignment: .leading){
             
-            Image(systemName: "person")
+            AsyncImage(url: URL(string: dessertCard.imageURL), content: { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: DessertCardSizes().width, maxHeight: DessertCardSizes().height)
+                    .cornerRadius(DessertCardSizes().corneRadius)
+                    .shadow(radius: DessertCardSizes().shadow)
+            }, placeholder: {
+                 RoundedRectangle(cornerRadius: 20)
+                    .frame(maxWidth: DessertCardSizes().width, maxHeight: DessertCardSizes().height)
+                    .foregroundColor(.black.opacity(0.2))
+                    .shadow(radius: 10)
                 
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: DessertCardSizes().width, maxHeight: DessertCardSizes().height)
-                .cornerRadius(DessertCardSizes().corneRadius)
-                .shadow(radius: DessertCardSizes().shadow)
-               
-               
-            
-            Text("Name")
+            })
+                
+            Text(dessertCard.name)
+                .bold()
+                .font(.system(size: 24))
                 .padding(.leading, DessertCardSizes().leading)
             
         }.padding(.horizontal)
@@ -30,6 +40,8 @@ struct DessertCardView: View {
 
 struct DessertCardView_Previews: PreviewProvider {
     static var previews: some View {
-        DessertCardView()
+        DessertCardView(dessertCard: sampleCard)
     }
 }
+
+let sampleCard = DessertModel.Card(id: "1", imageURL: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", name: "Apam balik")

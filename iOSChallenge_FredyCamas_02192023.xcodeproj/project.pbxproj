@@ -16,6 +16,11 @@
 		11A6695029A2D136000EF407 /* iOSChallenge_FredyCamas_02192023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6694F29A2D136000EF407 /* iOSChallenge_FredyCamas_02192023UITestsLaunchTests.swift */; };
 		11A6695E29A2D1FE000EF407 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6695D29A2D1FE000EF407 /* Constants.swift */; };
 		11A6696329A2DBFC000EF407 /* DessertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6696229A2DBFC000EF407 /* DessertCardView.swift */; };
+		11A6696829A30F43000EF407 /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6696729A30F43000EF407 /* DessertModel.swift */; };
+		11A6696A29A3180C000EF407 /* URLSeccionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6696929A3180C000EF407 /* URLSeccionExtension.swift */; };
+		11A6696D29A31B99000EF407 /* DessertNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6696C29A31B99000EF407 /* DessertNetworkModel.swift */; };
+		11A6697229A3211C000EF407 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6697129A3211C000EF407 /* DessertViewModel.swift */; };
+		11AE978529A333320012C0A5 /* ExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE978429A333320012C0A5 /* ExpandedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		11A6694F29A2D136000EF407 /* iOSChallenge_FredyCamas_02192023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSChallenge_FredyCamas_02192023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11A6695D29A2D1FE000EF407 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11A6696229A2DBFC000EF407 /* DessertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCardView.swift; sourceTree = "<group>"; };
+		11A6696729A30F43000EF407 /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
+		11A6696929A3180C000EF407 /* URLSeccionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSeccionExtension.swift; sourceTree = "<group>"; };
+		11A6696C29A31B99000EF407 /* DessertNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertNetworkModel.swift; sourceTree = "<group>"; };
+		11A6697129A3211C000EF407 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
+		11AE978429A333320012C0A5 /* ExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,9 @@
 		11A6693129A2D134000EF407 /* iOSChallenge_FredyCamas_02192023 */ = {
 			isa = PBXGroup;
 			children = (
+				11A6697029A32107000EF407 /* ViewModel */,
+				11A6696B29A3181D000EF407 /* Extension */,
+				11A6696429A30EEC000EF407 /* Model */,
 				11A6695F29A2DB2F000EF407 /* Views */,
 				11A6695C29A2D1EA000EF407 /* Constants */,
 				11A6693229A2D134000EF407 /* iOSChallenge_FredyCamas_02192023App.swift */,
@@ -145,8 +158,34 @@
 			isa = PBXGroup;
 			children = (
 				11A6696229A2DBFC000EF407 /* DessertCardView.swift */,
+				11AE978429A333320012C0A5 /* ExpandedView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		11A6696429A30EEC000EF407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11A6696729A30F43000EF407 /* DessertModel.swift */,
+				11A6696C29A31B99000EF407 /* DessertNetworkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11A6696B29A3181D000EF407 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11A6696929A3180C000EF407 /* URLSeccionExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		11A6697029A32107000EF407 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11A6697129A3211C000EF407 /* DessertViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +320,13 @@
 			files = (
 				11A6693529A2D134000EF407 /* ContentView.swift in Sources */,
 				11A6693329A2D134000EF407 /* iOSChallenge_FredyCamas_02192023App.swift in Sources */,
+				11A6696A29A3180C000EF407 /* URLSeccionExtension.swift in Sources */,
+				11A6696829A30F43000EF407 /* DessertModel.swift in Sources */,
 				11A6695E29A2D1FE000EF407 /* Constants.swift in Sources */,
+				11AE978529A333320012C0A5 /* ExpandedView.swift in Sources */,
 				11A6696329A2DBFC000EF407 /* DessertCardView.swift in Sources */,
+				11A6696D29A31B99000EF407 /* DessertNetworkModel.swift in Sources */,
+				11A6697229A3211C000EF407 /* DessertViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSChallenge_FredyCamas_02192023/Preview Content\"";
+				DEVELOPMENT_TEAM = FLFST97F5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -469,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSChallenge_FredyCamas_02192023/Preview Content\"";
+				DEVELOPMENT_TEAM = FLFST97F5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
